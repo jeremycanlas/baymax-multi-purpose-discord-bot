@@ -11,9 +11,15 @@ Try saying hi to baymax
 
 Functions
 $valorant username#tagname ($v) - gets user's level and rank
+
 $match username#tagname ($m) -Gets all player's ranks of most recent finished match
+
 $inspire - sends random inspirational quotes, also automatically replies if Baymax detects sad words in chat
+
 $crypto "BTC" - gets real time price of specified cryptocurrency
+
 $lyrics "song name and/or song artist" - gets the lyrics of specified song
+
 $join - Baymax joins voice channel of message author
+
 $leave - Baymax leaves voice channel
