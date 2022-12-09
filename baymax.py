@@ -216,4 +216,4 @@ async def join(ctx):
 async def leave(ctx):
     await ctx.voice_client.disconnect()
 
-bot.run(os.getenv("BAYMAX_TOKEN"))
+bot.run(os.environ["BAYMAX_TOKEN"])
