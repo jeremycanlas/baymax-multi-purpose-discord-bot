@@ -153,16 +153,20 @@ class Valorant(commands.Cog, name="Valorant Cog"):
                 playerEmojiRanks = list(range(10))
                 playerElos = list(range(10))
                 playerData = list(range(10))
+                rank = list(range(10))
                 for one in range(len(playerNames)):
                     async with session.get(f"https://api.henrikdev.xyz/valorant/v1/mmr/ap/{playerNames[one]}/{playerTags[one]}") as api2:
                         data2 = await api2.json()
                         rank = data2['data']['currenttierpatched']
                         elo = data2['data']['elo']
                         playerRanks[one] = rank
-                        playerEmojiRanks[one] = rank.replace(" ", "_")
-                        for elem in range(len(rank_list)):
-                            if playerEmojiRanks[one] in rank_list[elem]:
-                                playerEmojiRanks[one] = rank_list[elem]
+                        if rank != None:
+                            playerEmojiRanks[one] = rank.replace(" ", "_")
+                            for elem in range(len(rank_list)):
+                                if playerEmojiRanks[one] in rank_list[elem]:
+                                    playerEmojiRanks[one] = rank_list[elem]
+                        else:
+                            playerEmojiRanks[one] = "Unranked"
                         playerElos[one] = elo
                         playerData[one] = f"{playerEmojis[one]}`{playerNames[one]}#{playerTags[one]}`\n *Level:* {playerLevels[one]}\n *Character:* {playerCharacters[one]}\n *Rank:* {playerEmojiRanks[one]}\n *MMR:* {playerElos[one]}\n *KDA:* {playerKDAs[one]}\n *Headshot Percentage:* {playerHSPs[one]}\n\n"
                 em = Embed(title=f"{username}#{tag}'s {mapName} {gameMode}")

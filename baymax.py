@@ -26,8 +26,8 @@ intents.members = True
 # activity = nextcord.Game(name="testing slash commands")
 activity = nextcord.Activity(type= nextcord.ActivityType.listening, name='you')
 # bot = commands.Bot(command_prefix='$', activity=activity, status=nextcord.Status.idle, intents = intents)
+#bot = commands.Bot(command_prefix='$', activity=activity, intents = intents)
 bot = commands.Bot(command_prefix='$', activity=activity, intents = intents)
-
 for folder in os.listdir("modules"):
     if os.path.exists(os.path.join("modules", folder, "cog.py")):
         bot.load_extension(f"modules.{folder}.cog")
@@ -207,13 +207,13 @@ async def on_message(message):
     if any(word in message.content for word in bored_keyword):
         await message.channel.send(random.choice(bored_response))
 
-@bot.command()
-async def join(ctx):
-    channel = ctx.author.voice.channel
-    await channel.connect()
+# @bot.command()
+# async def join(ctx):
+#     channel = ctx.author.voice.channel
+#     await channel.connect()
 
-@bot.command()
-async def leave(ctx):
-    await ctx.voice_client.disconnect()
+# @bot.command()
+# async def leavee(ctx):
+#     await ctx.voice_client.disconnect()
 
 bot.run(os.environ["BAYMAX_TOKEN"])
