@@ -16,7 +16,7 @@ from nextcord.ext import commands
 import nextcord
 
 load_dotenv()
-
+nextcord.opus.load_opus("libopus.so")
 #Changing Activity Status of Baymax
 # activity = nextcord.Activity(type= nextcord.ActivityType.listening, name='you')
 # bot = commands.Bot(command_prefix='!', activity=activity)
