@@ -28,3 +28,4 @@ urllib3==1.26.14
 websockets==10.4
 yarl==1.8.2
 git+https://github.com/jeremycanlas/jtdlp
+opuslib==3.0.1
