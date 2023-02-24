@@ -31,6 +31,5 @@ class Song(commands.Cog, name="Song Cog"):
         em.set_footer(text = interaction.user.name, icon_url = interaction.user.display_avatar)
         await interaction.edit_original_message(embed=em)
 
-
 def setup(bot: commands.Bot):
     bot.add_cog(Song(bot))

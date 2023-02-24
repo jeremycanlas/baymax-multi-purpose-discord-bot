@@ -2,4 +2,8 @@
 .env
 test.py
 test_cog.py
-baymax.cpython-310.pyc
+__pycache__
+*/__pycache__/
+**cog.cpython
+__pycache__/
+**/__pycache__/

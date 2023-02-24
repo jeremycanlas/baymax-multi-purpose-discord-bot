@@ -103,8 +103,6 @@ def rand_key():
     key1 += temp
   return(key1)
 
-test = "<:Radiant:1050392767882342410>"
-
 #Discord Events
 #Function that prints a phrase when baymax goes online
 @bot.event
